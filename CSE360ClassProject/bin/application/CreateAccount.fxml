@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
+   <top>
+      <Label fx:id="createAccountLabel" text="Create Your Account" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="400.0" />
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="firstNameBox" maxWidth="200.0" promptText="First Name">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="lastNameBox" maxWidth="200.0" promptText="Last Name">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <ChoiceBox fx:id="genderDropdown" maxWidth="200.0" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Label fx:id="dOBLabel" alignment="CENTER" maxWidth="100.0" minWidth="100.0" text="Date of Birth">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="150.0" />
+                     </VBox.margin>
+                  </Label>
+                  <DatePicker fx:id="dOBSelector" maxWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <TextField fx:id="phoneNumberBox" maxWidth="200.0" promptText="Phone Number">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="emailBox" maxWidth="200.0" promptText="Email Address">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="usernameBox" maxWidth="200.0" promptText="Username">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="passwordBox" maxWidth="200.0" promptText="Password">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <ChoiceBox fx:id="accountTypeDropdown" maxWidth="200.0" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <TextField fx:id="insIDBox" maxWidth="200.0" promptText="Health Insurance Number">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="createAccountButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToLogin" text="Create Account">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="400.0" />
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
