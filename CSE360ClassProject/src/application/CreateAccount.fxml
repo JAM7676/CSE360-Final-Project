@@ -38,7 +38,7 @@
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
                   </TextField>
-                  <ChoiceBox fx:id="genderDropdown" maxWidth="200.0" prefWidth="150.0">
+                  <ChoiceBox fx:id="sexDropDown" accessibleText="Test" maxWidth="200.0" prefWidth="150.0">
                      <VBox.margin>
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
@@ -48,7 +48,7 @@
                         <Insets bottom="10.0" left="150.0" />
                      </VBox.margin>
                   </Label>
-                  <DatePicker fx:id="dOBSelector" maxWidth="200.0">
+                  <DatePicker fx:id="DOBSelector" maxWidth="200.0">
                      <VBox.margin>
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
@@ -73,7 +73,7 @@
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
                   </TextField>
-                  <ChoiceBox fx:id="accountTypeDropdown" maxWidth="200.0" prefWidth="150.0">
+                  <ChoiceBox fx:id="accountTypeDropDown" maxWidth="200.0" prefWidth="150.0">
                      <VBox.margin>
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
@@ -83,14 +83,16 @@
                         <Insets bottom="20.0" left="100.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button fx:id="createAccountButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#switchToLogin" text="Create Account">
+                  <Button fx:id="createAccountButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#createAccount" text="Create Account">
                      <VBox.margin>
                         <Insets left="150.0" />
                      </VBox.margin>
                   </Button>
+                  <Label fx:id="errorLabel" alignment="TOP_RIGHT" text=" " textFill="RED" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="400.0" />
+            <Label text="Label" />
          </children>
       </HBox>
    </center>

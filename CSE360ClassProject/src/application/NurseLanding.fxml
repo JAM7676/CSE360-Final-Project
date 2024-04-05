@@ -48,7 +48,7 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="welcomeLabel" prefWidth="500.0" text="Welcome Nurse:">
+            <Label fx:id="welcomeLabel" prefHeight="58.0" prefWidth="640.0" text="Welcome Nurse: ">
                <font>
                   <Font size="40.0" />
                </font>
@@ -56,9 +56,9 @@
                   <Insets left="300.0" top="50.0" />
                </HBox.margin>
             </Label>
-            <Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Logout">
+            <Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="100.0" text="Logout">
                <HBox.margin>
-                  <Insets left="150.0" top="50.0" />
+                  <Insets left="150.0" top="10.0" />
                </HBox.margin>
             </Button>
          </children>

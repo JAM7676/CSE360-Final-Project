@@ -20,7 +20,10 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="200.0" prefWidth="400.0" />
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <Button fx:id="testButton" mnemonicParsing="false" onAction="#TestUser" text="TEST" />
+               </children></VBox>
             <VBox prefHeight="200.0" prefWidth="400.0">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" />
@@ -36,7 +39,7 @@
                               <Insets bottom="20.0" left="125.0" />
                            </VBox.margin>
                         </TextField>
-                        <Button fx:id="loginButton" maxWidth="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Login">
+                        <Button fx:id="loginButton" maxWidth="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#attemptLogin" text="Login">
                            <VBox.margin>
                               <Insets bottom="20.0" left="175.0" />
                            </VBox.margin>
@@ -51,6 +54,14 @@
                               <Insets left="150.0" />
                            </VBox.margin>
                         </Button>
+                        <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="402.0" text=" ">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="42.0" right="44.0" top="33.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" />
