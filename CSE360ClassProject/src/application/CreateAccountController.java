@@ -79,8 +79,10 @@ public class CreateAccountController implements Initializable
 		}
 		else
 		{
-			String temp = usernameBox.getText() + passwordBox.getText();
-			String userID = Main.hashString(temp);
+//			String temp = usernameBox.getText() + passwordBox.getText();
+//			String userID = Main.hashString(temp);
+			
+			String userID = Main.hashString(usernameBox.getText());
 			
 			String newDirPath = Main.folderLoc + userID;
 			File newDir = new File(newDirPath);

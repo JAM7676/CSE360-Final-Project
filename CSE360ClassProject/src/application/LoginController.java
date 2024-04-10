@@ -45,8 +45,10 @@ public class LoginController {
 		}
 		else
 		{
-			String temp = UNIn + PWIn;
-			String userID = Main.hashString(temp);
+//			String temp = UNIn + PWIn;
+//			String userID = Main.hashString(temp);
+			
+			String userID = Main.hashString(UNIn);
 			
 			String dirPath = Main.folderLoc + userID;
 			File dir = new File(dirPath);
@@ -127,8 +129,8 @@ public class LoginController {
 	// ----------------------------------------------------------------------------
 	public void TestUser(ActionEvent e) throws IOException
 	{
-		String temp = "TestUsername" + "TestPassword";
-		String userID = Main.hashString(temp);
+//		String temp = "TestUsername";
+		String userID = Main.hashString("TestUsername");
 		
 		String newDirPath = Main.folderLoc + userID;
 		File newDir = new File(newDirPath);
