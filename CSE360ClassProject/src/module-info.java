@@ -1,4 +1,4 @@
-module DevVersionCSE360FINAL {
+module CSE360ClassProject {
 	requires javafx.controls;
 	requires javafx.fxml;
 	

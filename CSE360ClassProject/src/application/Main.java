@@ -43,9 +43,6 @@ public class Main extends Application
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException
 	{
-		if (System.getProperty("os.name").contains("Windows")) {
-			
-		}
 		launch(args);
 	}
 	
