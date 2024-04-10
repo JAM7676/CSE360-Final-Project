@@ -48,7 +48,7 @@ public class LoginController {
 			String temp = UNIn + PWIn;
 			String userID = Main.hashString(temp);
 			
-			String dirPath = Main.folderLoc + userID;
+			String dirPath = IOHandeler.getDirectory() + userID;
 			File dir = new File(dirPath);
 			
 			if(dir.exists())
@@ -130,7 +130,7 @@ public class LoginController {
 		String temp = "TestUsername" + "TestPassword";
 		String userID = Main.hashString(temp);
 		
-		String newDirPath = Main.folderLoc + userID;
+		String newDirPath = IOHandeler.getDirectory() + userID;
 		File newDir = new File(newDirPath);
 		
 		boolean accountMade = newDir.mkdir();
@@ -181,7 +181,7 @@ public class LoginController {
         
 //		switchToLogin(e); THIS IS WHERE THE FILES ARE FINISHED CREATING
 		
-		String dirPath = Main.folderLoc + userID;
+		String dirPath = IOHandeler.getDirectory() + userID;
 		File dir = new File(dirPath);
 		
 		if(dir.exists())

@@ -99,26 +99,62 @@
                         <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="Phone Number:">
+                  <Label fx:id="phoneLabel" text="Phone Number: ">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="Email Address:">
+                  <Label fx:id="emailLabel" text="Email Address: ">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="Preferred Nickname: ">
+                  <Label fx:id="nicknameLabel" text="Preferred Nickname: ">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="editInfoButton" mnemonicParsing="false" text="Edit Info">
+                  <Button fx:id="editInfoButton" mnemonicParsing="false" onAction="#showEditingArea" prefWidth="61.0" text="Edit Info">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" />
                      </VBox.margin>
                   </Button>
+                  <VBox fx:id="editInfoVBox" disable="true" prefHeight="303.0" prefWidth="400.0">
+                     <children>
+                        <Label fx:id="newPhoneLabel" text="New Phone Number">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="newPhoneTextField" />
+                        <Label fx:id="newEmailLabel" text="New Email Address:">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="newEmailTextField" />
+                        <Label fx:id="newNameLabel" text="New Preferred Nickname:">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="newNameTextField" />
+                        <HBox prefHeight="74.0" prefWidth="400.0">
+                           <children>
+                              <Button fx:id="savePersonalContactInfoButton" mnemonicParsing="false" onAction="#saveToFile" text="Save">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="cancelEditButton" mnemonicParsing="false" onAction="#hideEditingArea" text="Cancel">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="200.0" />

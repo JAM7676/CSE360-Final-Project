@@ -17,7 +17,8 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application
 {
 	// add the userID to the end of this string to access folder
-	public static final String folderLoc = "src/application/";
+	// public static final String folderLoc = System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\";
+	
 	
 //	private static User currUser;
 	public static User currUser;
@@ -38,6 +39,9 @@ public class Main extends Application
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException
 	{
+		if (System.getProperty("os.name").contains("Windows")) {
+			
+		}
 		launch(args);
 	}
 	

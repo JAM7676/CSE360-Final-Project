@@ -3,8 +3,9 @@ TestLastName
 Male
 2024-04-05
 1234567890
-Test@test.com
+no@thanks.com
 TestUsername
 TestPassword
 Patient
 TestIDValue
+Daft Punk
