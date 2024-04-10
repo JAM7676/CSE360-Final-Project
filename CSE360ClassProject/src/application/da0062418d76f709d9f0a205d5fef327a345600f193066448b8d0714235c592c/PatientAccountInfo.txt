@@ -6,6 +6,6 @@ Male
 no@thanks.com
 TestUsername
 TestPassword
-Patient
+Doctor
 TestIDValue
 Daft Punk

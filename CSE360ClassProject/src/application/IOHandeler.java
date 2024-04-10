@@ -8,6 +8,7 @@ public class IOHandeler {
 		return false;
 	}
 	
+	/*
 	public static String getDirectory () {
 		if (IOHandeler.isWindows()) {
 			return System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\";
@@ -23,4 +24,26 @@ public class IOHandeler {
 			return "src/application/" + userID + "/" + fileToLoad;
 		}
 	}
+	*/
+	
+	public static String getDirectory ()
+    {
+        // I CHANGED THE IF ELSE STATEMENT BY ADDING A '!', BECAUSE IT SEEMS FLIPPED AROUND
+        if (!IOHandeler.isWindows() || System.getProperty("os.name").equals("Windows 11"))
+            return System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\";
+        else
+        	System.out.println(System.getProperty("os.name"));
+            return "src/application/";
+        	
+
+    }
+
+    public static String getFile (String userID, String fileToLoad) {
+        // SAME THING HERE
+        if (!IOHandeler.isWindows() || System.getProperty("os.name").equals("Windows 11"))
+            return System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\" + userID + "\\" + fileToLoad;
+        else
+            return "src/application/" + userID + "/" + fileToLoad;
+
+    }
 }
