@@ -24,7 +24,7 @@ public class User
 	
 	public User(String userID) throws FileNotFoundException, IOException
 	{
-		String dataLocation = IOHandeler.getFile(userID);
+		String dataLocation = IOHandeler.getFile(userID, "PatientAccountInfo.txt");
 		String[] data = new String[11];
 		// Try-with-resources to ensure that resources are closed
 		try (BufferedReader reader = new BufferedReader(new FileReader(dataLocation)))

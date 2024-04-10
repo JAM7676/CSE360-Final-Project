@@ -44,19 +44,19 @@
                   </Label>
                   <ScrollPane prefHeight="300.0" prefWidth="370.0">
                      <content>
-                        <VBox prefWidth="370.0">
+                        <VBox fx:id="emergencyVBox" prefWidth="370.0">
                            <children>
-                              <TextArea prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
+                              <TextArea fx:id="emergencyContactOneTextArea" prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextArea>
-                              <TextArea prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
+                              <TextArea fx:id="emergencyContactTwoTextArea" prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextArea>
-                              <TextArea prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
+                              <TextArea fx:id="emergencyContactThreeTextArea" prefHeight="100.0" prefWidth="200.0" text="Contact Name:&#10;&#10;Relationship to Patient:&#10;&#10;Contact Phone Number: ">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
@@ -80,12 +80,12 @@
                         <Insets bottom="5.0" left="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="newNumberFIeld" maxWidth="200.0" prefWidth="200.0" promptText="Contacts Phone Number">
+                  <TextField fx:id="newNumberField" maxWidth="200.0" prefWidth="200.0" promptText="Contacts Phone Number">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button fx:id="addContactButton" mnemonicParsing="false" text="Add Contact">
+                  <Button fx:id="addContactButton" mnemonicParsing="false" onAction="#saveNewContactInfo" text="Add Contact">
                      <VBox.margin>
                         <Insets left="5.0" />
                      </VBox.margin>

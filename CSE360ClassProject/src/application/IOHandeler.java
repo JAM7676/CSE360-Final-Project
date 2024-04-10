@@ -16,11 +16,11 @@ public class IOHandeler {
 		}
 	}
 	
-	public static String getFile (String userID) {
+	public static String getFile (String userID, String fileToLoad) {
 		if (IOHandeler.isWindows()) {
-			return System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\" + userID + "\\PatientAccountInfo.txt";
+			return System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\" + userID + "\\" + fileToLoad;
 		} else {
-			return "src/application/" + userID + "/PatientAccountInfo.txt";
+			return "src/application/" + userID + "/" + fileToLoad;
 		}
 	}
 }
