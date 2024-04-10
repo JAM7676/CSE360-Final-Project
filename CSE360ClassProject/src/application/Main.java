@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -17,9 +19,12 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application
 {
 	// add the userID to the end of this string to access folder
-	public static final String folderLoc = "src/application/";
+	// public static final String folderLoc = System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\";
+	
 	
 //	private static User currUser;
+	public static Queue<User> queue = new LinkedList<>();
+	
 	public static User currUser;
 	
 	@Override
@@ -38,6 +43,9 @@ public class Main extends Application
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException
 	{
+		if (System.getProperty("os.name").contains("Windows")) {
+			
+		}
 		launch(args);
 	}
 	

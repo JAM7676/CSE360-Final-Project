@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class AddPatientController {
 	private Scene scene;
 	private Parent root;
 	private Stage stage;
+	
+	@FXML
+	private Label statusLabel;
 	
 	@FXML
 	private TextField usernameBox;
@@ -53,15 +57,16 @@ public class AddPatientController {
 	{
 		if(usernameBox.getText() == "" || heightBox.getText() == "" || weightBox.getText() == "" || BPBox.getText() == "" || healthConcernBox.getText() == "" || medicationBox.getText() == "" || allergyBox.getText() == "")
 		{
-			System.out.println("Not pog");
-//			errorLabel.setText("One or more Fields are empty");
+//			statusLabel.setText("One or more Fields are empty");
 //			return;
 		}
 		else
 		{
+			String folderLoc = IOHandeler.getDirectory();
+			
 			String userID = Main.hashString(usernameBox.getText());
 			
-			String newDirPath = Main.folderLoc + userID;
+			String newDirPath = folderLoc + userID;
 			File newDir = new File(newDirPath);
 			
 			if(newDir.exists())
@@ -78,6 +83,7 @@ public class AddPatientController {
 				{
 				    writer.write(content);
 				    System.out.println("Successfully wrote to the file: " + file.getAbsolutePath());
+				    Main.queue.add(new User(Main.hashString(this.usernameBox.getText())));
 				}
 				catch (IOException ex)
 				{
@@ -92,5 +98,10 @@ public class AddPatientController {
 			
 //			switchToLogin(e);
 		}
+	}
+	
+	private void clearBoxes()
+	{
+		this.allergyBox.setText("");
 	}
 }
