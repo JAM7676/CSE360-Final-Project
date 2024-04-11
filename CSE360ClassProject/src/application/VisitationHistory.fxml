@@ -43,216 +43,12 @@
                      <content>
                         <VBox prefWidth="370.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0">
-                                 <graphic>
-                                    <VBox prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Label alignment="TOP_LEFT" text="Attending Doctor: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Visitation Date: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label alignment="TOP_LEFT" text="Reason for Visit: ">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="5.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </graphic>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </Button>
+                              <Button fx:id="visitOne" mnemonicParsing="false" onAction="#buttonOnePress" prefHeight="150.0" prefWidth="350.0"></Button>
+                              <Button fx:id="visitTwo" mnemonicParsing="false" onAction="#buttonTwoPress" prefHeight="150.0" prefWidth="350.0"></Button>
+                              <Button fx:id="visitThree" mnemonicParsing="false" onAction="#buttonThreePress" prefHeight="150.0" prefWidth="350.0"></Button>
+                              <Button fx:id="visitFour" mnemonicParsing="false" onAction="#buttonFourPress" prefHeight="150.0" prefWidth="350.0"></Button>
+                              <Button fx:id="visitFive" mnemonicParsing="false" onAction="#buttonFivePress" prefHeight="150.0" prefWidth="350.0"></Button>
+                              <Button fx:id="visitSix" mnemonicParsing="false" onAction="#buttonSixPress" prefHeight="150.0" prefWidth="350.0"></Button>
                            </children>
                         </VBox>
                      </content>
@@ -261,12 +57,12 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="400.0">
                <children>
-                  <TextField alignment="TOP_LEFT" prefHeight="300.0" text="Detailed Desciprtion of Visit: ">
+                  <TextField fx:id="visitDescription" alignment="TOP_LEFT" editable="false" prefHeight="300.0" text="Detailed Desciprtion of Visit: ">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField alignment="TOP_LEFT" prefHeight="300.0" text="Doctor's Notes: ">
+                  <TextField fx:id="doctorNotes" alignment="TOP_LEFT" editable="false" prefHeight="300.0" text="Doctor's Notes: ">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </VBox.margin>
