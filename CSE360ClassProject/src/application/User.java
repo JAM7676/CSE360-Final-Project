@@ -16,6 +16,7 @@ public class User
 	public String username;
 	public String insuranceNum;
 	public String userID;
+	public String nickName;
 	
 	
 	// 0 = patient, 1 = doctor, 2 = nurse
@@ -23,8 +24,8 @@ public class User
 	
 	public User(String userID) throws FileNotFoundException, IOException
 	{
-		String dataLocation = Main.folderLoc + userID + "/PatientAccountInfo.txt";
-		String[] data = new String[10];
+		String dataLocation = IOHandeler.getFile(userID, "PatientAccountInfo.txt");
+		String[] data = new String[11];
 		// Try-with-resources to ensure that resources are closed
 		try (BufferedReader reader = new BufferedReader(new FileReader(dataLocation)))
 		{
@@ -49,5 +50,6 @@ public class User
 		this.accountType = data[8];
 		this.insuranceNum = data[9];
 		this.userID = userID;
+		this.nickName = data[10];
 	}
 }

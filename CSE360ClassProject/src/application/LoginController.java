@@ -35,20 +35,24 @@ public class LoginController {
 	
 	public void attemptLogin(ActionEvent e) throws IOException
 	{
+//		System.out.println(Main.queue);
+		
 		String UNIn = usernameBox.getText();
 		String PWIn = passwordBox.getText();
 		
-		if(UNIn.equals("")|| PWIn.equals(""))
+		if(UNIn.equals("") || PWIn.equals(""))
 		{
 			errorLabel.setText("Username or Password empty");
 			return;
 		}
 		else
 		{
-			String temp = UNIn + PWIn;
-			String userID = Main.hashString(temp);
+//			String temp = UNIn + PWIn;
+//			String userID = Main.hashString(temp);
 			
-			String dirPath = Main.folderLoc + userID;
+			String userID = Main.hashString(UNIn);
+			
+			String dirPath = IOHandeler.getDirectory() + userID;
 			File dir = new File(dirPath);
 			
 			if(dir.exists())
@@ -130,7 +134,7 @@ public class LoginController {
 		String temp = "TestUsername" + "TestPassword";
 		String userID = Main.hashString(temp);
 		
-		String newDirPath = Main.folderLoc + userID;
+		String newDirPath = IOHandeler.getDirectory() + userID;
 		File newDir = new File(newDirPath);
 		
 		boolean accountMade = newDir.mkdir();
@@ -181,7 +185,7 @@ public class LoginController {
         
 //		switchToLogin(e); THIS IS WHERE THE FILES ARE FINISHED CREATING
 		
-		String dirPath = Main.folderLoc + userID;
+		String dirPath = IOHandeler.getDirectory() + userID;
 		File dir = new File(dirPath);
 		
 		if(dir.exists())

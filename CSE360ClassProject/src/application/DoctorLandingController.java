@@ -41,4 +41,13 @@ public class DoctorLandingController implements Initializable
 	{
 		welcomeLabel.setText(welcomeLabel.getText() + Main.currUser.lastName);
 	}
+	
+	public void switchToMessagePortal(ActionEvent e) throws IOException
+	{
+		root = FXMLLoader.load(getClass().getResource("PatientMessagePortal.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 }

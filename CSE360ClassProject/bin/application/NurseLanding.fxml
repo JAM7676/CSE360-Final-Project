@@ -15,7 +15,7 @@
             <VBox prefHeight="200.0" prefWidth="300.0" />
             <VBox prefHeight="200.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="patientQueueButton" mnemonicParsing="false" prefHeight="200.0" prefWidth="500.0" text="Add Patient to Queue">
+                  <Button fx:id="patientQueueButton" mnemonicParsing="false" onAction="#switchToAddPatient" prefHeight="200.0" prefWidth="500.0" text="Add Patient to Queue">
                      <VBox.margin>
                         <Insets bottom="20.0" left="50.0" top="20.0" />
                      </VBox.margin>
@@ -31,7 +31,7 @@
                         <Font size="40.0" />
                      </font>
                   </Button>
-                  <Button fx:id="messagingPortalButton" mnemonicParsing="false" prefHeight="200.0" prefWidth="500.0" text="Messaging Portal">
+                  <Button fx:id="messagingPortalButton" mnemonicParsing="false" onAction="#switchToMessagePortal" prefHeight="200.0" prefWidth="500.0" text="Messaging Portal">
                      <VBox.margin>
                         <Insets left="50.0" />
                      </VBox.margin>

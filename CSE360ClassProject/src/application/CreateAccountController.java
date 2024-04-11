@@ -79,10 +79,14 @@ public class CreateAccountController implements Initializable
 		}
 		else
 		{
-			String temp = usernameBox.getText() + passwordBox.getText();
-			String userID = Main.hashString(temp);
+			String folderLoc = IOHandeler.getDirectory();
 			
-			String newDirPath = Main.folderLoc + userID;
+//			String temp = usernameBox.getText() + passwordBox.getText();
+//			String userID = Main.hashString(temp);
+			
+			String userID = Main.hashString(usernameBox.getText());
+			
+			String newDirPath = folderLoc + userID;
 			File newDir = new File(newDirPath);
 			
 			if(newDir.exists())
@@ -92,6 +96,7 @@ public class CreateAccountController implements Initializable
 			else
 	        {
 	            boolean accountMade = newDir.mkdir();
+
 
 	            if(accountMade)
 	            {
@@ -105,7 +110,7 @@ public class CreateAccountController implements Initializable
 	                    {
 	                        System.out.println("File created: " + file.getAbsolutePath());
 	                        
-	                        String content = firstNameBox.getText() + "\n" + lastNameBox.getText() + "\n" + sexDropDown.getValue() + "\n" + DOBSelector.getValue() + "\n" + phoneNumberBox.getText() + "\n" + emailBox.getText() + "\n" + usernameBox.getText() + "\n" + passwordBox.getText() + "\n" + accountTypeDropDown.getValue() + "\n" + insIDBox.getText();
+	                        String content = firstNameBox.getText() + "\n" + lastNameBox.getText() + "\n" + sexDropDown.getValue() + "\n" + DOBSelector.getValue() + "\n" + phoneNumberBox.getText() + "\n" + emailBox.getText() + "\n" + usernameBox.getText() + "\n" + passwordBox.getText() + "\n" + accountTypeDropDown.getValue() + "\n" + insIDBox.getText() + "\n" + firstNameBox.getText();
 	                        
 	                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
 	                        {
@@ -131,10 +136,45 @@ public class CreateAccountController implements Initializable
 	                    ex.printStackTrace();
 	                }
 	            	
+	            	file = new File(newDirPath, "MessageInfo.txt");
+	            	
+	            	try {
+	            		boolean fileCreated = file.createNewFile();
+	            		if (fileCreated)
+	                    {
+	                        System.out.println("File created: " + file.getAbsolutePath());
+	                        
+	                        String content = "";
+	                        
+	                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
+	                        {
+	                            writer.write(content);
+	                            System.out.println("Successfully wrote to the file: " + file.getAbsolutePath());
+	                        }
+	                        catch (IOException ex)
+	                        {
+	                            System.err.println("An error occurred while writing to the file: " + file.getAbsolutePath());
+	                            ex.printStackTrace();
+	                        }
+	                    }
+	                    
+	                    else
+	                    {
+	                        System.out.println("File already exists: " + file.getAbsolutePath());
+	                    }
+	            		
+	            	}
+	            	catch (IOException ex)
+	            	{
+	                    System.err.println("Cannot create the file: " + file.getAbsolutePath());
+	                    ex.printStackTrace();
+	                }
+	            	
 	                System.out.println("Account was created successfully.");
 	            }
 	            else
 	            {
+	            	
 	                System.out.println("Failed to create Account.");
 	            }
 	        }
