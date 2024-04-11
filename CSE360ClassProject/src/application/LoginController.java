@@ -35,10 +35,12 @@ public class LoginController {
 	
 	public void attemptLogin(ActionEvent e) throws IOException
 	{
+//		System.out.println(Main.queue);
+		
 		String UNIn = usernameBox.getText();
 		String PWIn = passwordBox.getText();
 		
-		if(UNIn.equals("")|| PWIn.equals(""))
+		if(UNIn.equals("") || PWIn.equals(""))
 		{
 			errorLabel.setText("Username or Password empty");
 			return;
@@ -129,8 +131,8 @@ public class LoginController {
 	// ----------------------------------------------------------------------------
 	public void TestUser(ActionEvent e) throws IOException
 	{
-//		String temp = "TestUsername";
-		String userID = Main.hashString("TestUsername");
+		String temp = "TestUsername" + "TestPassword";
+		String userID = Main.hashString(temp);
 		
 		String newDirPath = IOHandeler.getDirectory() + userID;
 		File newDir = new File(newDirPath);

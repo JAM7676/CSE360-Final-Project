@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -21,6 +23,8 @@ public class Main extends Application
 	
 	
 //	private static User currUser;
+	public static Queue<User> queue = new LinkedList<>();
+	
 	public static User currUser;
 	
 	@Override

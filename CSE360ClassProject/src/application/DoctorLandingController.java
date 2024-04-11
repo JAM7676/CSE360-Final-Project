@@ -34,7 +34,23 @@ public class DoctorLandingController implements Initializable
 		stage.show();
 	}
 
-
+	public void switchToPatientLookup(ActionEvent e) throws IOException
+	{
+		root = FXMLLoader.load(getClass().getResource("SearchPatient.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public void switchToCurrPatient(ActionEvent e) throws IOException
+	{
+		root = FXMLLoader.load(getClass().getResource("CurrPatientVisit.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)

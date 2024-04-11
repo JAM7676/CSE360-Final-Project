@@ -79,7 +79,6 @@ public class CreateAccountController implements Initializable
 		}
 		else
 		{
-
 			String folderLoc = IOHandeler.getDirectory();
 
 //			String temp = usernameBox.getText() + passwordBox.getText();
@@ -142,6 +141,7 @@ public class CreateAccountController implements Initializable
 	            }
 	            else
 	            {
+	            	
 	                System.out.println("Failed to create Account.");
 	            }
 	        }
