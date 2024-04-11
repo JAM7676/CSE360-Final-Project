@@ -66,7 +66,8 @@ public class AddPatientController {
 			
 			String userID = Main.hashString(usernameBox.getText());
 			
-			String newDirPath = folderLoc + userID;
+			String newDirPath = IOHandeler.getDirectory() + userID;
+
 			File newDir = new File(newDirPath);
 			
 			if(newDir.exists())
