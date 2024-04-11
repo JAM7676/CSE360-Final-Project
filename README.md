@@ -7,4 +7,4 @@ Contributors:
 - Ashton Owen
 
 
-Final group project for software engineering class. Medical patient portal for viewing patient data, and messaging doctors.
+Final group project for software engineering class. Medical patient portal for viewing patient data and messaging doctors.
