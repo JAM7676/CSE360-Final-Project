@@ -23,7 +23,7 @@
                         <Font size="40.0" />
                      </font>
                   </Button>
-                  <Button fx:id="patientLookupButton" mnemonicParsing="false" prefHeight="200.0" prefWidth="500.0" text="Patient Lookup">
+                  <Button fx:id="patientLookupButton" mnemonicParsing="false" onAction="#switchToPatientLookup" prefHeight="200.0" prefWidth="500.0" text="Patient Lookup">
                      <VBox.margin>
                         <Insets bottom="20.0" left="50.0" />
                      </VBox.margin>

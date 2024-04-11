@@ -17,9 +17,6 @@ public class User
 	public String insuranceNum;
 	public String userID;
 	public String nickName;
-	
-	
-	// 0 = patient, 1 = doctor, 2 = nurse
 	public String accountType;
 	
 	public User(String userID) throws FileNotFoundException, IOException

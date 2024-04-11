@@ -84,6 +84,7 @@ public class AddPatientController {
 				    writer.write(content);
 				    System.out.println("Successfully wrote to the file: " + file.getAbsolutePath());
 				    Main.queue.add(new User(Main.hashString(this.usernameBox.getText())));
+				    switchToMainMenu(e);
 				}
 				catch (IOException ex)
 				{
@@ -95,8 +96,6 @@ public class AddPatientController {
 	        {
 	            System.out.println("User does not exist.");
 	        }
-			
-//			switchToLogin(e);
 		}
 	}
 	
