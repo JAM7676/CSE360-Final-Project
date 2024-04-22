@@ -1,4 +1,0 @@
-doctor
-patient
-
-Content: hello doctor -patient    Reply: hello patient -doctor
