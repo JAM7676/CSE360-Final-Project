@@ -108,6 +108,7 @@ public class CurrPatientVisitController implements Initializable
 		            System.err.println("An error occurred while writing to the file: " + ex.getMessage());
 		        }
 			}
+			switchToMainMenu(e);
 		}
 	}
 

@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,19 +72,41 @@ public class CreateAccountController implements Initializable
 		stage.show();
 	}
 	
+	
 	public void createAccount(ActionEvent e) throws IOException
 	{
-		if(firstNameBox.getText() == null || lastNameBox.getText() == null || sexDropDown.getValue() == null || DOBSelector.getValue() == null || phoneNumberBox.getText() == null || emailBox.getText() == null || usernameBox.getText() == null || passwordBox.getText() == null || accountTypeDropDown.getValue() == null || insIDBox.getText() == null)
+		if(firstNameBox.getText().equals("") || lastNameBox.getText().equals("") || sexDropDown.getValue() == null || DOBSelector.getValue().equals("") || phoneNumberBox.getText().equals("") || emailBox.getText().equals("") || usernameBox.getText().equals("") || passwordBox.getText().equals("") || accountTypeDropDown.getValue() == null || insIDBox.getText().equals(""))
 		{
 			errorLabel.setText("One or more Fields are empty");
 			return;
 		}
 		else
 		{
-			String folderLoc = IOHandeler.getDirectory();
+			String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+			String passwordRegex = "^(?=(?:[^0-9]*[0-9]){4})[a-zA-Z0-9]{8,}$";
 			
-//			String temp = usernameBox.getText() + passwordBox.getText();
-//			String userID = Main.hashString(temp);
+			Pattern emailPattern = Pattern.compile(emailRegex);
+			Matcher emailMatcher = emailPattern.matcher(emailBox.getText());
+			
+			Pattern passwordPattern = Pattern.compile(passwordRegex);
+			Matcher passwordMatcher = passwordPattern.matcher(passwordBox.getText());
+			
+			if (!passwordMatcher.matches())
+			{
+	            errorLabel.setText("Invalid Password");
+	            return;
+	        }
+			
+			if (!emailMatcher.matches())
+			{
+	            errorLabel.setText("Invalid Email");
+	            return;
+	        }
+			
+			
+			
+			
+			String folderLoc = IOHandeler.getDirectory();
 			
 			String userID = Main.hashString(usernameBox.getText());
 			
@@ -91,7 +115,7 @@ public class CreateAccountController implements Initializable
 			
 			if(newDir.exists())
 			{
-	            System.out.println("Account already exists.");
+	            System.out.println("Username already exists.");
 	        }
 			else
 	        {

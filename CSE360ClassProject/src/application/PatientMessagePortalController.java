@@ -20,7 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class PatientMessagePortalController implements Initializable{
+public class PatientMessagePortalController implements Initializable
+{
 	private Scene scene;
 	private Parent root;
 	private Stage stage;
@@ -132,11 +133,13 @@ public class PatientMessagePortalController implements Initializable{
 		File sendDir = new File(sendDirPath);
 		File recMessageInfo = new File(recDirPath, "MessageInfo.txt");
 		File sendMessageInfo = new File(sendDirPath, "MessageInfo.txt");
-		if(!recDir.exists()) {
+		if(!recDir.exists())
+		{
 			System.out.println("Invalid recipient\n");
 			return;
 		}
-		if (!sendDir.exists()) {
+		if (!sendDir.exists())
+		{
 			System.out.println("Sender does not exist\n");
 			return;
 		}
@@ -273,25 +276,30 @@ public class PatientMessagePortalController implements Initializable{
 		messageFive.setVisible(false);
 		
 		String folderLoc = IOHandeler.getDirectory() + "\\" + Main.hashString(Main.currUser.username);
-		try {
+		try
+		{
 			File messageInfo = new File(folderLoc, "MessageInfo.txt");
 			Scanner reader = new Scanner(messageInfo);
 			int i = 0;
-			while(reader.hasNextLine()) {
+			while(reader.hasNextLine())
+			{
 				messageNames[i] = reader.nextLine();
 				System.out.println("Message " + i + " name: " + messageNames[i]);
 				i++;
 			}
-			for (int j = 0; j < i; j++) {
+			for (int j = 0; j < i; j++)
+			{
 				messageFiles[j] = new File(folderLoc, messageNames[j]);
 				reader = new Scanner(messageFiles[j]);
 				messages[j][0] = reader.nextLine();
 				messages[j][1] = reader.nextLine();
 				messages[j][2] = "";
-				while(reader.hasNextLine()) {
+				while(reader.hasNextLine())
+				{
 					messages[j][2] = messages[j][2] + "\n" + reader.nextLine();
 				}
-				switch (j) {
+				switch (j)
+				{
 				case 0:
 					messageOne.setText("From: " + messages[j][0] + "\nTo: " + messages[j][1]);
 					messageOne.setVisible(true);
@@ -317,7 +325,9 @@ public class PatientMessagePortalController implements Initializable{
 					break;
 				}
 			}
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e)
+		{
 			System.out.println("File does not exist");
 			e.printStackTrace();
 		}

@@ -16,7 +16,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LoginController {
+public class LoginController
+{
 	private Scene scene;
 	private Parent root;
 	private Stage stage;
@@ -57,9 +58,14 @@ public class LoginController {
 			
 			if(dir.exists())
 			{
+				Main.currUser = new User(userID);
+				if(!Main.currUser.getPass().equals(PWIn))
+				{
+					Main.currUser = null;
+					errorLabel.setText("Incorrect Username or Password");
+					return;
+				}
 	            System.out.println("Logging in...");
-	            Main.currUser = new User(userID);
-//	            Main.setUser(new User(userID));
 	            
 	            switch(Main.currUser.accountType)
 	    		{
@@ -124,95 +130,5 @@ public class LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-	}
-	
-	
-	
-	// ----------------------------------------------------------------------------
-	public void TestUser(ActionEvent e) throws IOException
-	{
-		String temp = "TestUsername" + "TestPassword";
-		String userID = Main.hashString(temp);
-		
-		String newDirPath = IOHandeler.getDirectory() + userID;
-		File newDir = new File(newDirPath);
-		
-		boolean accountMade = newDir.mkdir();
-
-        if(accountMade)
-        {
-        	File file = new File(newDirPath, "PatientAccountInfo.txt");
-        	
-        	try {
-                // Create the file, and return true if the file was successfully created
-                boolean fileCreated = file.createNewFile();
-                
-                if (fileCreated)
-                {
-                    System.out.println("File created: " + file.getAbsolutePath());
-                    
-                    String content = "TestFirstName" + "\n" + "TestLastName" + "\n" + "Male" + "\n" + "2024-04-05" + "\n" + "1234567890" + "\n" + "Test@test.com" + "\n" + "TestUsername" + "\n" + "TestPassword" + "\n" + "Patient" + "\n" + "TestIDValue";
-                    
-                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
-                    {
-                        writer.write(content);
-                        System.out.println("Successfully wrote to the file: " + file.getAbsolutePath());
-                        
-                    }
-                    catch (IOException ex)
-                    {
-                        System.err.println("An error occurred while writing to the file: " + file.getAbsolutePath());
-                        ex.printStackTrace();
-                    }
-                }
-                else
-                {
-                    System.out.println("File already exists: " + file.getAbsolutePath());
-                }
-            }
-        	catch (IOException ex)
-        	{
-                System.err.println("Cannot create the file: " + file.getAbsolutePath());
-                ex.printStackTrace();
-            }
-        	
-            System.out.println("Account was created successfully.");
-        }
-        else
-        {
-            System.out.println("Failed to create Account.");
-        }
-        
-//		switchToLogin(e); THIS IS WHERE THE FILES ARE FINISHED CREATING
-		
-		String dirPath = IOHandeler.getDirectory() + userID;
-		File dir = new File(dirPath);
-		
-		if(dir.exists())
-		{
-            System.out.println("Logging in...");
-            Main.currUser = new User(userID);
-            
-            switch(Main.currUser.accountType)
-    		{
-    		case "Patient":
-    		{
-    			switchToPatientMainMenu(e);
-    			break;
-    		}
-    		case "Doctor":
-    		{
-    			switchToDoctorMainMenu(e);
-    			break;
-    		}
-    		case "Nurse":
-    		{
-    			switchToNurseMainMenu(e);
-    			break;
-    		}
-    		default:
-    			System.out.println("Account type cannot be resolved");
-    		}
-        }
 	}
 }

@@ -18,7 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class VisitationHistoryController implements Initializable{
+public class VisitationHistoryController implements Initializable
+{
 	private Scene scene;
 	private Parent root;
 	private Stage stage;
@@ -105,11 +106,13 @@ public class VisitationHistoryController implements Initializable{
 		visitSix.setVisible(false);
 		
 		String folderLoc = IOHandeler.getDirectory() + "\\" + Main.hashString(Main.currUser.username);
-		try {
+		try
+		{
 			File visitHistory = new File(folderLoc, "visitHistory.txt");
 			Scanner reader = new Scanner(visitHistory);
 			int i = 0;
-			while(reader.hasNextLine()) {
+			while(reader.hasNextLine())
+			{
 				visits[i][0] = reader.nextLine();
 				visits[i][1] = reader.nextLine();
 				visits[i][2] = reader.nextLine();
@@ -117,8 +120,10 @@ public class VisitationHistoryController implements Initializable{
 				visits[i][4] = reader.nextLine();
 				i++;
 			}
-			for (int j = 0; j < i; j++) {
-				switch(j) {
+			for (int j = 0; j < i; j++)
+			{
+				switch(j)
+				{
 				case 0:
 					visitOne.setVisible(true);
 					visitOne.setText("Doctor: " + visits[j][0] + 
@@ -163,7 +168,8 @@ public class VisitationHistoryController implements Initializable{
 					break;
 				}
 			}
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e)
+		{
 			System.out.println("File does not exist");
 			e.printStackTrace();
 		}

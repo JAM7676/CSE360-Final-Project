@@ -58,7 +58,8 @@ public class PatientLandingController implements Initializable
 	}
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
 		welcomeLabel.setText(welcomeLabel.getText() + Main.currUser.lastName);
 	}
 }

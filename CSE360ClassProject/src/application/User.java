@@ -18,6 +18,7 @@ public class User
 	public String userID;
 	public String nickName;
 	public String accountType;
+	private String password;
 	
 	public User(String userID) throws FileNotFoundException, IOException
 	{
@@ -43,10 +44,15 @@ public class User
 		this.phoneNumber = data[4];
 		this.email = data[5];
 		this.username = data[6];
-//		this.username = data[7]; PASSWORD
+		this.password = data[7];
 		this.accountType = data[8];
 		this.insuranceNum = data[9];
 		this.userID = userID;
 		this.nickName = data[10];
+	}
+	
+	public String getPass()
+	{
+		return this.password;
 	}
 }

@@ -17,12 +17,7 @@ import javafx.fxml.FXMLLoader;
 
 
 public class Main extends Application
-{
-	// add the userID to the end of this string to access folder
-	// public static final String folderLoc = System.getProperty("user.dir") + "\\CSE360ClassProject\\src\\application\\";
-	
-	
-//	private static User currUser;
+{	
 	public static Queue<User> queue = new LinkedList<>();
 	
 	public static User currUser;
@@ -30,13 +25,16 @@ public class Main extends Application
 	@Override
 	public void start(Stage primaryStage)
 	{
-		try {
+		try
+		{
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root,1200,800);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		} catch(Exception e) {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
@@ -45,11 +43,6 @@ public class Main extends Application
 	{
 		launch(args);
 	}
-	
-//	public static void setUser(User u)
-//	{
-//		currUser = u;
-//	}
 	
 	public static String hashString(String str)
 	{
@@ -62,9 +55,11 @@ public class Main extends Application
 
             // Convert byte array into signum representation
             StringBuilder hexString = new StringBuilder(2 * encodedhash.length);
-            for (int i = 0; i < encodedhash.length; i++) {
+            for (int i = 0; i < encodedhash.length; i++)
+            {
                 String hex = Integer.toHexString(0xff & encodedhash[i]);
-                if (hex.length() == 1) {
+                if (hex.length() == 1)
+                {
                     hexString.append('0');
                 }
                 hexString.append(hex);

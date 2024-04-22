@@ -33,6 +33,15 @@ public class NurseLandingController implements Initializable
 		stage.show();
 	}
 	
+	public void switchToMessagePortal(ActionEvent e) throws IOException
+	{
+		root = FXMLLoader.load(getClass().getResource("PatientMessagePortal.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
 	public void switchToAddPatient(ActionEvent e) throws IOException
 	{
 		root = FXMLLoader.load(getClass().getResource("AddPatient.fxml"));
@@ -52,7 +61,8 @@ public class NurseLandingController implements Initializable
 	}
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
 		welcomeLabel.setText(welcomeLabel.getText() + Main.currUser.lastName);
 	}
 }

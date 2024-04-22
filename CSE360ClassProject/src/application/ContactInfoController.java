@@ -25,7 +25,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ContactInfoController implements Initializable {
+public class ContactInfoController implements Initializable
+{
 	private Scene scene;
 	private Parent root;
 	private Stage stage;
@@ -68,15 +69,18 @@ public class ContactInfoController implements Initializable {
 		stage.show();
 	}
 	
-	public void showEditingArea () {
+	public void showEditingArea ()
+	{
 		editInfoVBox.setDisable(false);
 	}
 	
-	public void hideEditingArea () {
+	public void hideEditingArea ()
+	{
 		editInfoVBox.setDisable(true);
 	}
 	
-	public void saveToFile () throws FileNotFoundException, IOException {
+	public void saveToFile () throws FileNotFoundException, IOException
+	{
 		Main.currUser.phoneNumber = newPhoneTextField.getText();
 		Main.currUser.email = newEmailTextField.getText();
 		Main.currUser.nickName = newNameTextField.getText();
@@ -124,12 +128,10 @@ public class ContactInfoController implements Initializable {
 		newNameTextField.setText("");
 		
 		editInfoVBox.setDisable(true);
-
-	
 	}
 	
-	public void saveNewContactInfo () {
-		
+	public void saveNewContactInfo ()
+	{
 		/*
 		 * Will Create new file in Cx's patient directory for emergency contacts
 		 * Should load into the web page and display all of them iteratively
@@ -139,12 +141,14 @@ public class ContactInfoController implements Initializable {
 		String dirPath = IOHandeler.getDirectory() + Main.currUser.userID;
 		File contactInfoFile = new File(dirPath, "PatientEmergencyContactInfo.txt");
 		
-		if(!contactInfoFile.exists()) {
-			
-			try {
+		if(!contactInfoFile.exists())
+		{
+			try
+			{
 				boolean fileCreated = contactInfoFile.createNewFile();
 				
-				if (fileCreated) {
+				if (fileCreated)
+				{
 					System.out.println("File created: " + contactInfoFile.getAbsolutePath());
                     
                     String content = newNameField.getText() + "\n" + newRelationshipField.getText() + "\n" + newNumberField.getText();
@@ -162,12 +166,15 @@ public class ContactInfoController implements Initializable {
                     }
 				}
 				
-			} catch (IOException ex) {
+			}
+			catch (IOException ex)
+			{
 				System.err.println("Cannot create the file: " + contactInfoFile.getAbsolutePath());
                 ex.printStackTrace();
 			}
-		} else {
-			
+		}
+		else
+		{
 			String content = "\n" + newNameField.getText() + "\n" + newRelationshipField.getText() + "\n" + newNumberField.getText();
 			
 			 try (BufferedWriter writer = new BufferedWriter(new FileWriter(contactInfoFile, true)))
@@ -187,11 +194,15 @@ public class ContactInfoController implements Initializable {
 		// This block just checks if the three pre-set text areas are empty
 		if(emergencyContactOneTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 			emergencyContactOneTextArea.setText("Contact Name: " + newNameField.getText() + "\n\nRelationship to Patient: " + newRelationshipField.getText() + "\n\nContact Phone Number: " + newNumberField.getText());
-		} else if (emergencyContactTwoTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
+		}
+		else if (emergencyContactTwoTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 			emergencyContactTwoTextArea.setText("Contact Name: " + newNameField.getText() + "\n\nRelationship to Patient: " + newRelationshipField.getText() + "\n\nContact Phone Number: " + newNumberField.getText());
-		} else if (emergencyContactThreeTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
+		}
+		else if (emergencyContactThreeTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 			emergencyContactThreeTextArea.setText("Contact Name: " + newNameField.getText() + "\n\nRelationship to Patient: " + newRelationshipField.getText() + "\n\nContact Phone Number: " + newNumberField.getText());
-		} else {
+		}
+		else
+		{
 			// If the three blocks aren't empty, make a new one at the end of the VBox.
 			TextArea newTextArea = new TextArea();
 			newTextArea.setPrefHeight(100);
@@ -208,7 +219,8 @@ public class ContactInfoController implements Initializable {
 	}
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
 		phoneLabel.setText(phoneLabel.getText() + Main.currUser.phoneNumber);
 		emailLabel.setText(emailLabel.getText() + Main.currUser.email);
 		nicknameLabel.setText(nicknameLabel.getText() + Main.currUser.nickName); 
@@ -227,21 +239,26 @@ public class ContactInfoController implements Initializable {
 						// Read line by line
 						while ((line = reader.readLine()) != null)
 						{
-						data.add(line);
+							data.add(line);
 						}
 						reader.close();
 					
 						// For loop which iterates with i + 3 for every loop
 					
-						for(int i=0; i<data.size(); i+=3 ) {
+						for(int i=0; i<data.size(); i+=3 )
+						{
 							// This block just checks if the three pre-set text areas are empty
 							if(emergencyContactOneTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 								emergencyContactOneTextArea.setText("Contact Name: " + data.get(i) + "\n\nRelationship to Patient: " + data.get(i+1) + "\n\nContact Phone Number: " + data.get(i+2));
-							} else if (emergencyContactTwoTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
+							}
+							else if (emergencyContactTwoTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 								emergencyContactTwoTextArea.setText("Contact Name: " + data.get(i) + "\n\nRelationship to Patient: " + data.get(i+1) + "\n\nContact Phone Number: " + data.get(i+2));
-							} else if (emergencyContactThreeTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
+							}
+							else if (emergencyContactThreeTextArea.getText().equals("Contact Name:\n\nRelationship to Patient:\n\nContact Phone Number: ")) {
 								emergencyContactThreeTextArea.setText("Contact Name: " + data.get(i) + "\n\nRelationship to Patient: " + data.get(i+1) + "\n\nContact Phone Number: " + data.get(i+2));
-							} else {
+							}
+							else
+							{
 								// If the three blocks aren't empty, make a new one at the end of the VBox.
 								TextArea newTextArea = new TextArea();
 								newTextArea.setPrefHeight(100);
@@ -252,10 +269,14 @@ public class ContactInfoController implements Initializable {
 							}
 						}
 					
-					} catch (FileNotFoundException e) {
+					}
+					catch (FileNotFoundException e)
+					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (IOException e) {
+					}
+					catch (IOException e)
+					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
